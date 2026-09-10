@@ -1,0 +1,236 @@
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial;background:#07111f;color:#eaf2ff}header{height:68px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1b2d43;background:#091522}.brand{font-size:20px;font-weight:800}.brand span{margin-left:8px}.login-wrap{min-height:calc(100vh - 68px);display:grid;place-items:center;background:radial-gradient(circle at 50% 20%,#16345a,#07111f 60%)}.login-card{width:min(500px,92%);padding:38px;border:1px solid #244463;border-radius:24px;background:#0b1929;box-shadow:0 25px 70px #0008}.eyebrow{font-size:11px;letter-spacing:2px;color:#62d8ff;font-weight:800}h1{font-size:36px;margin:10px 0}p{color:#a9bdd3;line-height:1.55}.login-card input,.login-card select,.form input,.form select,.form textarea{width:100%;padding:13px;margin:7px 0;border-radius:10px;border:1px solid #29445f;background:#0a1624;color:#fff}.login-card button,button{border:0;border-radius:10px;padding:13px 18px;background:#27c3ff;color:#00111b;font-weight:800;cursor:pointer;margin-top:8px}.login-card small{display:block;margin-top:14px;color:#8298ad}.hero{padding:35px 5% 18px;display:flex;justify-content:space-between;gap:20px}.hero h1{margin-bottom:4px}.secondary{background:#17283b;color:#dceeff;border:1px solid #2a4764}.tabs{display:flex;gap:8px;padding:0 5% 20px;flex-wrap:wrap}.tab{background:#102136;color:#b9cee2;border:1px solid #24415d}.tab.active{background:#27c3ff;color:#00111b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;padding:0 5% 30px}.card{background:#0c1b2b;border:1px solid #213c56;border-radius:18px;padding:20px}.card h3{margin-top:0}.metric{display:flex;justify-content:space-between;margin:8px 0;color:#b8cadb}.bar{height:8px;background:#1b3046;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:#27c3ff}.score{font-size:34px;font-weight:900;color:#62d8ff}.badge{padding:6px 9px;border-radius:20px;background:#15344a;color:#62d8ff;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{flex:1}.form{max-width:800px;margin:0 5% 30px;padding:20px;background:#0c1b2b;border:1px solid #213c56;border-radius:18px}.form label{display:block;color:#9db3c9;margin-top:8px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}#map{height:350px;border-radius:16px;margin:0 5% 30px;border:1px solid #24415d}.empty{margin:0 5%;color:#8ea4b9}#toast{position:fixed;right:20px;bottom:20px;padding:14px 18px;background:#10273c;border:1px solid #315a7c;border-radius:12px;display:none;z-index:20}@media(max-width:650px){.two{grid-template-columns:1fr}.hero{display:block}.hero button{width:100%}}
+/* 3D Smart City Model */
+
+.model3d {
+  position: relative;
+  height: 420px;
+  margin: 25px 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(#b9e5ff, #e8f6ff);
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+
+.building {
+  position: absolute;
+  bottom: 90px;
+  width: 80px;
+  height: 150px;
+  background: linear-gradient(90deg, #667eea, #4b5fc1);
+  transform: skewY(-8deg);
+  box-shadow: 18px 18px 0 #3949a3;
+}
+
+.building::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  top: -15px;
+  left: 8px;
+  background: #7f8ff0;
+  transform: skewX(-45deg);
+}
+
+.building::after {
+  content: "▦ ▦ ▦\A▦ ▦ ▦\A▦ ▦ ▦\A▦ ▦ ▦";
+  white-space: pre;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.b1 {
+  left: 15%;
+  height: 190px;
+}
+
+.b2 {
+  left: 35%;
+  height: 130px;
+}
+
+.b3 {
+  left: 55%;
+  height: 220px;
+}
+
+.b4 {
+  left: 75%;
+  height: 160px;
+}
+
+.road3d {
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 95px;
+  background: #555;
+  transform: perspective(400px) rotateX(45deg);
+}
+
+.road3d::after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  border-top: 5px dashed white;
+}
+
+.park3d {
+  position: absolute;
+  bottom: 65px;
+  left: 43%;
+  width: 100px;
+  height: 55px;
+  border-radius: 50%;
+  background: #72b96b;
+  transform: skewX(-15deg);
+}
+/* Interactive 3D City */
+
+.model-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.model-controls button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.model-controls button:hover {
+  transform: translateY(-2px);
+}
+
+.model3d {
+  position: relative;
+  height: 450px;
+  margin: 20px 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(#a9dcf5, #e9f7ff);
+  perspective: 1000px;
+}
+
+.city-ground {
+  position: absolute;
+  width: 650px;
+  height: 350px;
+  left: 50%;
+  top: 50%;
+  margin-left: -325px;
+  margin-top: -175px;
+  background: #82bd72;
+  border-radius: 20px;
+  transform: rotateX(55deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+/* Buildings */
+
+.building {
+  position: absolute;
+  width: 70px;
+  height: 130px;
+  bottom: 120px;
+  background: linear-gradient(90deg, #667eea, #4655b8);
+  border-radius: 4px;
+  transform: translateZ(20px);
+  box-shadow: 12px 12px 0 #39459c;
+}
+
+.building span {
+  position: absolute;
+  top: 45px;
+  left: 22px;
+  font-size: 25px;
+}
+
+.b1 {
+  left: 80px;
+  height: 160px;
+}
+
+.b2 {
+  left: 220px;
+  height: 110px;
+}
+
+.b3 {
+  left: 370px;
+  height: 190px;
+}
+
+.b4 {
+  left: 500px;
+  height: 140px;
+}
+
+/* Road */
+
+.road3d {
+  position: absolute;
+  left: 0;
+  bottom: 45px;
+  width: 100%;
+  height: 55px;
+  background: #555;
+  transform: translateZ(10px);
+}
+
+.road3d::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  border-top: 4px dashed white;
+}
+
+/* Park */
+
+.park3d {
+  position: absolute;
+  left: 250px;
+  bottom: 210px;
+  width: 150px;
+  height: 70px;
+  border-radius: 50%;
+  background: #4f9d58;
+  transform: translateZ(15px);
+}
+
+/* Trees */
+
+.tree {
+  position: absolute;
+  font-size: 32px;
+  transform: translateZ(30px);
+}
+
+.tree1 {
+  left: 170px;
+  bottom: 230px;
+}
+
+.tree2 {
+  left: 430px;
+  bottom: 90px;
+}
+
+.tree3 {
+  left: 560px;
+  bottom: 220px;
+}

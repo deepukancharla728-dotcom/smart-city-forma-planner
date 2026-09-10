@@ -1,0 +1,11 @@
+com\sih\smartcity\SmartCityApplication.class
+com\sih\smartcity\ApiController.class
+com\sih\smartcity\LayoutRepository.class
+com\sih\smartcity\SiteRequest.class
+com\sih\smartcity\Site.class
+com\sih\smartcity\SiteRepository.class
+com\sih\smartcity\Layout.class
+com\sih\smartcity\LayoutRequest.class
+com\sih\smartcity\LoginRequest.class
+com\sih\smartcity\LoginResponse.class
+com\sih\smartcity\SeedData.class

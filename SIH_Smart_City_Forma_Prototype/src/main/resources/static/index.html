@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIH SmartCity Forma Planner</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<header><div class="brand">🏙️ <span>SmartCity Forma Planner</span></div><div id="roleBadge"></div></header>
+
+<section id="login" class="login-wrap">
+  <div class="login-card">
+    <div class="eyebrow">SMART INDIA HACKATHON • 2026</div>
+    <h1>Site Planning Command Center</h1>
+    <p>Site → 3D Model → AI Analysis → Proposals → Comparison → Optimized Design → BIM</p>
+    <select id="role"><option value="PLANNER">Site Planner</option><option value="LAYOUT">Layout Designer</option><option value="CONSTRUCTOR">Constructor</option></select>
+    <input id="username" placeholder="Username"><input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Enter dashboard</button>
+    <small>Demo: planner / planner123 • layout / layout123 • constructor / constructor123</small>
+  </div>
+</section>
+
+<main id="app" hidden>
+  <div class="hero">
+    <div><div class="eyebrow">DATA-DRIVEN URBAN PLANNING</div><h1 id="title">Dashboard</h1><p id="subtitle"></p></div>
+    <button class="secondary" onclick="logout()">Logout</button>
+  </div>
+  <nav id="tabs"></nav>
+  <section id="content"></section>
+</main>
+
+<div id="toast"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body></html>
